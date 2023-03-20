@@ -1,0 +1,124 @@
+.clock__container {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.clock__addsub_time {
+  font-family: 'Roboto';
+  display: flex;
+  gap: 1rem;
+  font-size: 2rem;
+  color: #be3e21;
+  line-height: 42px;
+  cursor: pointer;
+  margin-bottom: 5rem;
+}
+
+.clock__addsubtime__marked {
+  color: #22A1BE;
+}
+
+.clock__time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.clock__time_counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.clock__time input {
+  font-family: 'Roboto';
+  width: 10rem;
+  text-align: center;
+  align-self: flex-start;
+  color: #9193A8;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-top: 15rem;
+}
+
+.clock__time h6 {
+  font-family: 'Roboto';
+  width: 10rem;
+  text-align: center;
+  align-self: flex-start;
+  color: #9193A8;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.clock__time h1 {
+  font-family: 'Roboto';
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10rem;
+  line-height: 150px;
+  margin: 0;
+}
+
+.clock__separator {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.5rem;
+  line-height: 56px;
+  color: #9193A8;
+}
+
+.clock__buttons {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-around;
+}
+
+.clock__buttons div {
+  margin-top: 10rem;
+  width: 205px;
+  height: 205px;
+  border: 5px solid #22A1BE;
+  border-radius: 100%;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock__buttons div:hover {
+  background-color: #82a0a7;
+  font-size: 1.9rem;
+}
+
+.clock__buttons div:last-child:hover {
+  background-color: #a78881;
+}
+
+.clock__buttons div:last-child {
+  border-color: #be3e21;
+}
