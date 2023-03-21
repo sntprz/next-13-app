@@ -47,11 +47,13 @@ export default function Home() {
   // Function to start or stop the timer based on its status
   const toggleTimer = () => {
     setIsRunning(!isRunning); // Toggle isRunning state variable
+    localStorage.setItem("isRunning", !isRunning)
   };
 
   // Function to reset the timer
   const resetTimer = () => {
     setIsRunning(false); // Stop the timer first
+    localStorage.setItem("isRunning", false)
     setTime(0); // Reset time to zero
   };
 
@@ -65,8 +67,23 @@ export default function Home() {
         /* If sign is - then subtract changeHours *3600000 + changeMinutes *60000 + changeSeconds *1000 milliseconds from time */
         setTime((prevTime) => prevTime - (changeHours * 3600000 + changeMinutes * 60000 + changeSeconds * 1000));
       }
+      setChangeHours(0)
+      setChangeMinutes(0)
+      setChangeSeconds(0)
     }
   };
+
+  useEffect(() => {
+    window.addEventListener("visibilitychange", () => {
+      const running = JSON.parse(localStorage.getItem("isRunning"))
+      if (running && document.visibilityState === "visible") {
+        const hiddenDate = new Date(localStorage.getItem("time"))
+        const timeDiff = Date.now() - hiddenDate.getTime();
+        setTime((prevTime) => prevTime + timeDiff);
+      }
+      localStorage.setItem("time", new Date())
+    })
+  }, [])
 
   return (
     <div className={styles.page}>
